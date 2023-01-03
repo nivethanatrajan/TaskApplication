@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Add Users</h1>
+<div mat-dialog-content >
+<form [formGroup]="taskForm" >
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter Title</mat-label>
+            <input formControlName="title" matInput placeholder="Title" value="Sushi" />
+          </mat-form-field>
+          .
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter Description</mat-label>
+            <input
+              formControlName="body"
+              matInput
+              placeholder="Description"
+              value="Sushi"
+            />
+          </mat-form-field> 
+          </form>  
+      </div>
+      <div mat-dialog-action [align]="'end'">
+        <button   mat-raised-button color="warn" mat-dialog-close>
+            Cancel
+          </button>
+          <button style="margin-left:8px;" mat-raised-button color="primary" (click)="addTask()">Save</button>
+      </div>
+ 
+ 
