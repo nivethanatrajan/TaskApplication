@@ -19,3 +19,13 @@ td, th {
   max-width: 12000px;
   margin: 0 auto;
 }
+
+.bg-img{
+  min-height: -webkit-fill-available; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+   background-image: url("https://www.manurevasolutions.com/wp-content/uploads/2022/02/we-build-your-team.png");
+
+}
