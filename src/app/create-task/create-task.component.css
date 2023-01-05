@@ -8,7 +8,12 @@
   .example-full-width {
     width: 100%;
   }
-
-  .container{
-    padding-top: 30px;
+ 
+  .bg-img { 
+    background-image: url("https://www.manurevasolutions.com/wp-content/uploads/2022/03/our-mission.png"); 
+    min-height: -webkit-fill-available; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
