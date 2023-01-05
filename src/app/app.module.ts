@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EdidTaskComponent } from './edid-task/edid-task.component';
+import { EdidTaskComponent } from './edit-task/edit-task.component';
 import { DeleteTaskComponent } from './delete-task/delete-task.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
@@ -20,6 +20,11 @@ import { DialogpopupComponent } from './shared/dialogpopup/dialogpopup.component
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip'; 
+
+ 
+ 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 
 @NgModule({
   declarations: [
@@ -29,7 +34,7 @@ import { MatSortModule } from '@angular/material/sort';
     CreateTaskComponent,
     ViewTaskComponent,
     HeaderComponent,
-    DialogpopupComponent,
+    DialogpopupComponent, 
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { MatSortModule } from '@angular/material/sort';
     ReactiveFormsModule,
     FormsModule,
     MatSortModule,
+    MatTooltipModule,MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

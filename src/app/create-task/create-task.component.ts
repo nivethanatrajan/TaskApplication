@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
@@ -10,35 +11,33 @@ import { ApiService } from '../shared/api.service';
 export class CreateTaskComponent implements OnInit {
   taskForm !: FormGroup;
   users:[] = [];
-  constructor(private formBuilder:FormBuilder, private api:ApiService){} 
+  constructor(private formBuilder:FormBuilder, private api:ApiService,private router: Router){} 
 
   ngOnInit(): void {
     this.taskForm = this.formBuilder.group({
       title: ['', Validators.required],
-      body:['',Validators.required]
+      body:['',Validators.required],
+      userId:[Math.floor(100 + Math.random() * 10)]
     })
   }
-  addTask() {
-    console.log(this.taskForm.value)
-    if (this.taskForm.valid) {
-
-      const headers = { 'content-type': 'application/json' }  
-      
-      const body=JSON.stringify(this.taskForm.valid);
-      console.log(body) 
-
-      this.api.postTask(body).subscribe( {
-        next: data => {
-          console.log(data)      },
-      error: error => {
-         // this.errorMessage = error.message;
-          console.error('There was an error!', error);
+  addTask() {   
+      if (this.taskForm.valid) {
+        var userid =  
+        this.api.postTask(this.taskForm.value )
+          .subscribe({
+            next: (res) => {
+              console.log(res,'res.value')
+              alert('Task Blog added succesfully')
+             this.router.navigate(['/'])
+              this.taskForm.reset()  
+            },
+            error: () => {
+              alert("Error while adding the Task Blog")
+            }
+          })
       }
-       // this.users.push({ tile: response.title, description: response.description });
-      })
-    }
-  }
-  clearTask() {
+    }   
+  clearTask(){
    this.taskForm.reset()
   }
   

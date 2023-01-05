@@ -11,6 +11,8 @@ import { ApiService } from '../api.service';
 export class DialogpopupComponent {
   taskTitle: any;
   taskDescription: any;
+  taskId:number | undefined;
+  taskuserId:number | undefined;
   
   
 
@@ -18,11 +20,12 @@ export class DialogpopupComponent {
 
   ngOnInit(): void {
    
-    this.api.viewTask(this.viewData.id).subscribe(
+    this.api.getTask(this.viewData.id).subscribe(
       (data: any) => {
+        this.taskId= data.id;
+        this.taskuserId = data.userId;
           this.taskTitle = data.title;
-          this.taskDescription = data.body; 
-       
+          this.taskDescription = data.body;  
       })
       
      

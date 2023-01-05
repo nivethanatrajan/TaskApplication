@@ -11,14 +11,16 @@ export class ApiService {
   postTask(data: any) {
     return this.http.post<any>("https://jsonplaceholder.typicode.com/posts",data)
   }
-  viewTaskcollection() {
-    return this.http.get<any>("https://jsonplaceholder.typicode.com/posts")
-  }
-  editTask(data: any) {
-    return this.http.put<any>("https://jsonplaceholder.typicode.com/posts/1",data)
-  } 
-  viewTask(id:number) {
+  getTask(id:number) {
     return this.http.get<any>("https://jsonplaceholder.typicode.com/posts/"+id)
   }
-
+  getTaskcollection() {
+    return this.http.get<any>("https://jsonplaceholder.typicode.com/posts")
+  }
+  putTask(data:any, id:number) {
+    return this.http.put<any>("https://jsonplaceholder.typicode.com/posts/"+id,data)
+  } 
+  deleteProduct(id:number){
+    return this.http.delete<any>("https://jsonplaceholder.typicode.com/posts/"+id);
+  } 
 }

@@ -1,15 +1,13 @@
-<h2 mat-dialog-title>View Task</h2>
-<mat-dialog-content class="mat-typography">
-  <div>
-    <h2>Title</h2>
-    {{ taskTitle }}
-  </div>
-  <hr />
-  <div>
-    <h2>Description</h2>
-    {{ taskDescription }}
-  </div>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-</mat-dialog-actions>
+<div mat-dialog-content> 
+      <h1 mat-dialog-title>View Task Blog</h1>
+      <mat-dialog-actions align="end"> 
+      <mat-icon mat-dialog-close>close</mat-icon> 
+    </mat-dialog-actions>  
+    <ul>
+      <li><b>ID:</b> {{ taskId }} </li>
+      <li><b>UserId:</b> {{ taskuserId }}</li>
+      <li><b>Title:</b> '{{ taskTitle }}'</li>
+      <li><b>Description:</b> '{{ taskDescription }}'</li> 
+    </ul>  
+ </div>
+
