@@ -1,26 +1,35 @@
-<div class="container" >
-  
-<form [formGroup]="taskForm" class="example-form" >
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Enter Title</mat-label>
-    <input formControlName="title" matInput placeholder="Title" value="Sushi" />
-  </mat-form-field>
- 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Enter Description</mat-label>
-    <input
-      formControlName="body"
-      matInput
-      placeholder="Description"
-      value="Sushi"
-    />
-  </mat-form-field> 
-
-<div mat-dialog-action [align]="'end'">
-  <button   mat-raised-button color="warn" (click)="clearTask()">
-      Cancel
-    </button>
-    <button style="margin-left:8px;" mat-raised-button color="primary" (click)="addTask()">save</button>
-</div>
-</form>
+<div class="container bg-img">
+  <form [formGroup]="taskForm" class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter Title</mat-label>
+      <input
+        formControlName="title"
+        matInput
+        placeholder="Title"
+        value="Sushi"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter Description</mat-label>
+      <input
+        formControlName="body"
+        matInput
+        placeholder="Description"
+        value="Sushi"
+      />
+    </mat-form-field>
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button color="warn" (click)="clearTask()">
+        Cancel
+      </button>
+      <button
+        style="margin-left: 8px"
+        mat-raised-button
+        color="primary"
+        (click)="addTask()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
 </div>
