@@ -12,6 +12,7 @@ import { ApiService } from '../shared/api.service';
 export class CreateTaskComponent implements OnInit {
   taskForm!: FormGroup;
   users: [] = [];
+  alertmessage: any;
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
@@ -29,8 +30,9 @@ export class CreateTaskComponent implements OnInit {
     if (this.taskForm.valid) {
       var userid = this.api.postTask(this.taskForm.value).subscribe({
         next: (res) => {
-          console.log(res, 'res.value');
-          alert('Task Blog added succesfully');
+          console.log(res, 'res.value'); 
+          this.alertmessage= JSON.stringify(res)  
+          alert('Task Blog added succesfully' + this.alertmessage);
           this.router.navigate(['/']);
           this.taskForm.reset();
         },

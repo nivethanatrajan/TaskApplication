@@ -10,10 +10,10 @@
   }
  
   .bg-img { 
-    background-image: url("https://www.manurevasolutions.com/wp-content/uploads/2022/03/our-mission.png"); 
-    min-height: -webkit-fill-available; 
-    background-position: center;
+    background-image: url(https://www.manurevasolutions.com/wp-content/uploads/2022/03/our-mission.png);
+    min-height: calc(100vh - 65px);
+    background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
+    background-size: 600px;
   }

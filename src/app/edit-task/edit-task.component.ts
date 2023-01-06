@@ -13,6 +13,7 @@ export class EdidTaskComponent implements OnInit {
   taskForm!: FormGroup;
   id!: number;
   isAddMode!: boolean;
+  alertmessage!: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,7 +42,9 @@ export class EdidTaskComponent implements OnInit {
       var userid = this.api.postTask(this.taskForm.value).subscribe({
         next: (res) => {
           console.log(res, 'res.value');
-          alert('Task Blog Updated succesfully');
+          this.alertmessage= JSON.stringify(res)  
+          alert('Task Blog Updated succesfully' + this.alertmessage);
+ 
           this.router.navigate(['/']);
           this.taskForm.reset();
         },

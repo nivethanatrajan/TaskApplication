@@ -18,6 +18,7 @@ export class ViewTaskComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  alertmessage!: string;
 
   constructor(public dialog: MatDialog, private api: ApiService) {}
 
@@ -53,7 +54,7 @@ export class ViewTaskComponent implements OnInit {
   deleteProduct(id: number) {
     this.api.deleteProduct(id).subscribe({
       next: (res) => {
-        alert('Product Deleted Successfully');
+        alert('Product Deleted Successfully'); 
         this.getallTask();
       },
       error: (err) => {
